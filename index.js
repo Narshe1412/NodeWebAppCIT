@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
-//const port = process.env.PORT || 3000;
 const articles = [{title: 'Example'}];
+const bodyParser = require('body-parser');
 
 // app.get('/', (req,res) => {
 //     res.send('Hello world');
@@ -13,6 +13,9 @@ const articles = [{title: 'Example'}];
 
 app.set('port', process.env.PORT || 3000);
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
+
 app.get('/', (req, res, next) => {
     res.send('Article fetcher')
 })
@@ -22,7 +25,9 @@ app.get('/articles', (req, res, next) => {
 })
 
 app.post('/articles', (req, res, next) => {
-    res.send('OK');
+    const article = {title : req.body.title};
+    articles.push(article);
+    res.send(article);
 })
 
 app.get('/articles/:id', (req, res, next) => {
