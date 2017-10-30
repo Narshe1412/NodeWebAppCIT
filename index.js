@@ -19,7 +19,8 @@ app.get('/articles', (req, res, next) => {
         if(err) return next(err);
         //res.send(articles);
         res.format({
-            html: () => { res.render('articles.ejs', {articles:articles})},
+            //html: () => { res.render('articles.ejs', {articles:articles})},
+            html: () => { res.render('../views/select.pug', {articles:articles})},
             json: () => { res.send(articles)}
         })
     })
