@@ -1,0 +1,22 @@
+include invoice.pug
+
+html
+    head
+        title This is my first pug page
+    body
+        header
+            p My soon to be menu
+        section
+            p This is a post about pug template engine, enjoy!
+            p 
+                a.foo_link(href='about.html', target='_blank') About us
+                link(href='css/styles.css', rel='stylesheet')
+                script(type='text/javascript').
+                    var myVar = 'Hello var';
+                    console.log(myVar);
+                script(src='/javascripts/app.js')
+        section
+            p Invoices:
+            +invoice
+        footer
+            cool footer with loads of copyrights
