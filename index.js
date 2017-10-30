@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const articles = [{title: 'Example'}];
 const bodyParser = require('body-parser');
+const read = require('node-readability');
 const Article = require('./db').Article;
 
 app.set('port', process.env.PORT || 3000);
@@ -21,9 +22,20 @@ app.get('/articles', (req, res, next) => {
 })
 
 app.post('/articles', (req, res, next) => {
-    const article = {title : req.body.title};
-    articles.push(article);
-    res.send(article);
+    const url = req.body.url;
+
+    read(url, (err, result) => {
+        if (err || !result) res.status(500).send('Error downloading the article');
+        else {
+            Article.create({
+                title : result.title,
+                content: result.content
+            }, (err, article) => {
+                if (err) return next(err);
+                res.send('OK');
+            })
+        }
+    })
 })
 
 app.get('/articles/:id', (req, res, next) => {

@@ -19,7 +19,9 @@
   },
   "homepage": "https://github.com/Narshe1412/NodeWebAppCIT#readme",
   "dependencies": {
+    "ejs": "^2.5.7",
     "express": "^4.16.2",
+    "node-readability": "^3.0.0",
     "sqlite3": "^3.1.13"
   },
   "devDependencies": {
