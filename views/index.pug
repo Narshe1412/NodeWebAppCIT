@@ -1,10 +1,11 @@
 include invoice.pug
+include header.pug
 
 html
     head
         title This is my first pug page
     body
-        header
+        +header_block('Amazing title here', 'index.html')
             p My soon to be menu
         section
             p This is a post about pug template engine, enjoy!
