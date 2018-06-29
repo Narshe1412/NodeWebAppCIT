@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect"
+    "prepublish": "npm run snyk-protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -26,7 +27,7 @@
     "node-readability": "^3.0.0",
     "pug": "^2.0.0-rc.4",
     "sqlite3": "^4.0.0",
-    "snyk": "^1.71.0"
+    "snyk": "^1.87.0"
   },
   "devDependencies": {
     "semistandard": "^11.0.0"
