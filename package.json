@@ -27,7 +27,7 @@
     "node-readability": "^3.0.0",
     "pug": "^2.0.0-rc.4",
     "sqlite3": "^4.0.0",
-    "snyk": "^1.87.0"
+    "snyk": "^1.88.2"
   },
   "devDependencies": {
     "semistandard": "^11.0.0"
