@@ -30,7 +30,7 @@
     "snyk": "^1.189.0"
   },
   "devDependencies": {
-    "semistandard": "^14.0.0"
+    "semistandard": "^16.0.1"
   },
   "snyk": true
 }
